@@ -1,17 +1,33 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+export interface ThemeObject {
+  oldValue: string ;
+  newValue: string;
+};
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  themeSelection: BehaviorSubject<string> = new BehaviorSubject<string>('dark');
+
+  initialSetting: ThemeObject = {
+    oldValue: '', 
+    newValue: 'dark'
+  };
+
+  themeSelection: BehaviorSubject<ThemeObject> = new BehaviorSubject<ThemeObject>(this.initialSetting);
 
   setTheme(theme: string) {
-    this.themeSelection.next(theme);
+
+    this.themeSelection.next(
+      {
+        oldValue: this.themeSelection.value.newValue, 
+        newValue: theme
+      });
   }
 
-  themeChanges(): Observable<string> {
+  themeChanges(): Observable<ThemeObject> {
     return this.themeSelection.asObservable();
   }
 }

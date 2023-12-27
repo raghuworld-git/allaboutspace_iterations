@@ -4,5 +4,5 @@
 
 export const environment = {
     production: false,
-    LL2_BASE_URL:'https://lldev.thespacedevs.com/2.2.0/'
+    LL2_BASE_URL:'https://lldev.thespacedevs.com/2.2.0'
   };

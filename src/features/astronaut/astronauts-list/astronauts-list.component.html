@@ -1,27 +1,34 @@
-<h1 class="display-6">Astronauts</h1>
+<h3>Astronauts</h3>
+<app-pagination></app-pagination>
+<button class='btn btn-sm btn-rounded btn-primary'>1</button>
 <div class="row">
-  @for(astro of sampleImages;let index = $index; track index){
+  @for(astro of astroList;track astro.id){
   <div class="col col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
     <div
-      class="d-flex flex-column align-items-center justify-content-center py-3"
+      class="
+        d-flex
+        flex-column
+        align-items-center
+        justify-content-center
+        py-3
+        shadow-sm
+        rounded
+        bg-body-tertiary
+        position-relative
+      "
     >
       <img
         class="rounded-circle"
         style="object-fit: cover; object-position: center"
-        [ngSrc]="astro.imgURL"
-        alt="fsdfsd"
+        [src]="astro.profile_image"
+        [alt]="astro.name"
         width="180"
         height="180"
         priority
       />
-      <span class="mt-2">Anastatia Mayers</span>
+      <span class="mt-2"> {{ astro.name }}</span>
       <span class="small">{{ astro.nationality }}</span>
-      <a
-        class="btn btn-primary btn-sm mt-1"
-        [routerLink]="index + 'dfs'"
-        style="--bs-btn-padding-y: 0rem"
-        ><fa-icon [icon]="faArrowRight"></fa-icon
-      ></a>
+      <a class="stretched-link" [routerLink]="astro.id.toString()"></a>
     </div>
   </div>
   }

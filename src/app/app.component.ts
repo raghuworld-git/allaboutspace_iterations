@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private themeServiceSubscription$!: Subscription;
 
   ngOnInit(): void {
+    
     this.themeServiceSubscription$ = this.themeService
       .themeChanges()
       .subscribe((theme) => {

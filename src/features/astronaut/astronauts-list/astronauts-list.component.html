@@ -3,20 +3,20 @@
 <button class='btn btn-sm btn-rounded btn-primary'>1</button>
 <div class="row">
   @for(astro of astroList;track astro.id){
-  <div class="col col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mb-2">
     <div
       class="
         d-flex
-        flex-column
-        align-items-center
-        justify-content-center
+        flex-column        
         py-3
+        ps-3        
         shadow-sm
         rounded
         bg-body-tertiary
         position-relative
       "
     >
+    <section class="d-flex flex-column align-items-start">
       <img
         class="rounded-circle"
         style="object-fit: cover; object-position: center"
@@ -29,6 +29,7 @@
       <span class="mt-2"> {{ astro.name }}</span>
       <span class="small">{{ astro.nationality }}</span>
       <a class="stretched-link" [routerLink]="astro.id.toString()"></a>
+    </section>
     </div>
   </div>
   }

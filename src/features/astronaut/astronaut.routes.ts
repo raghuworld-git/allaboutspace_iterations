@@ -5,5 +5,5 @@ import { AstronautsListComponent } from './astronauts-list/astronauts-list.compo
 export const routes: Routes = [
     { path: '', pathMatch: 'full', component: AstronautsListComponent },
     { path: ':page/:size', pathMatch: 'full', component: AstronautsListComponent },
-    { path: ':astronautSlug', pathMatch: 'full', component: AstronautInfoComponent }
+    { path: ':id', pathMatch: 'full', component: AstronautInfoComponent }
 ];

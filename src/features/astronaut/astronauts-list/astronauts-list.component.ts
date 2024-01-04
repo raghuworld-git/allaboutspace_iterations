@@ -28,7 +28,7 @@ export class AstronautsListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.astroSubscripstion$ =
-      this.astroService.getAstronautsList().subscribe({
+      this.astroService.getAstronautsList(5,10).subscribe({
         next: (data) => this.astroList = data.results
       });
   }
